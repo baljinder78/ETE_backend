@@ -1,0 +1,8 @@
+body {
+    background-image: url(background.jpg);
+}
+
+.div_blue {
+    background-color: blue;
+    color: aliceblue;
+}
