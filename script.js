@@ -3,22 +3,22 @@ function add() {
     var from = document.getElementById("from").value;
     var to = document.getElementById("to").value;
     var xhttp1 = new XMLHttpRequest();
+    if (from === to) {
+        alert("Same date can't be passed");
+        return;
+
+    }
     var url = "https://api.covid19api.com/country/" + country + "?from=" + from + "T00:00:00Z&to=" + to + "T00:00:00Z";
 
-    document.getElementById("result_area").innerHTML = url;
+
     xhttp1.open("GET", url, true);
     xhttp1.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var list = JSON.parse(this.responseText);
-            var count_case = 0;
-            var count_death = 0;
-            var count_active = 0;
+
             for (var i = 0; i < list.length; i++) {
-                count_case = count_case + list[i].Confirmed;
-                count_active = count_active + list[i].Active;
-                count_death = count_death + list[i].Deaths;
+                create(list[i].Confirmed, list[i].Active, list[i].Deaths);
             }
-            create(count_case, count_active, count_death);
 
         }
     };
@@ -30,6 +30,7 @@ function add() {
 
 function create(count_case, count_active, count_death) {
     var parent = document.getElementById("result_area");
+
     var div_parent = document.createElement("div");
 
     var c_c = document.createElement("p");
@@ -74,4 +75,5 @@ function create(count_case, count_active, count_death) {
     div_parent.setAttribute("class", "div_blue");
 
     parent.appendChild(div_parent);
+
 }

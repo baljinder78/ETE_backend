@@ -1,8 +1,47 @@
 body {
     background-image: url(background.jpg);
+    font-size: 20px;
+    font-family: Calibri;
 }
 
 .div_blue {
-    background-color: blue;
-    color: aliceblue;
+    background-color: #810000;
+    color: #eeebdd;
+    margin: auto;
+    width: 20%;
+    margin-top: 3%;
+    border: 3px solid #eeebdd;
+    text-align: center;
+}
+
+#inputs_nav {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+#inputs_nav input {
+    height: 30px;
+    border: 3px solid #132c33;
+    background-color: #51c4d3;
+    border-radius: 5px;
+    color: #132c33;
+    font-size: 17px;
+    font-family: Calibri;
+}
+
+#inputs_nav button {
+    width: 10%;
+    background-color: #132c33;
+    color: #51c4d3;
+    border-radius: 30px;
+    border: 3px solid #51c4d3;
+    font-size: 17px;
+    font-family: Calibri;
+}
+
+#result_area {
+    width: 100%;
 }
