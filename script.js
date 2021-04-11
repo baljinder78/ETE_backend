@@ -3,6 +3,10 @@ function add() {
     var from = document.getElementById("from").value;
     var to = document.getElementById("to").value;
     var xhttp1 = new XMLHttpRequest();
+    if (country === "" || from === "" || to === "") {
+        alert("all fields are required");
+        return;
+    }
     if (from === to) {
         alert("Same date can't be passed");
         return;
